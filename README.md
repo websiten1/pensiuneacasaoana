@@ -1,77 +1,110 @@
-# Casa Oana — Website Pensiune Iași
+# Casa Oana — Website de lux, Pensiune Iași
 
-Website static pentru **Pensiunea Casa Oana**, Nicolae Beldiceanu nr. 2, Iași.
+Website static single-page pentru **Pensiunea Casa Oana**, design clasic elegant, minimalist.
 
 ## Structura proiectului
 
 ```
 casa-oana-website/
-├── index.html      # Pagina principală
-├── styles.css      # Toate stilurile
-├── script.js       # Interactivitate (modal, animații, meniu)
-├── images/         # Pune imaginile reale aici
+├── index.html      — Pagina principală (toate sectiunile)
+├── styles.css      — Design system complet cu CSS custom properties
+├── script.js       — Header, modal, lightbox, animatii, validare form
+├── images/         — Pune imaginile reale here (vezi mai jos)
 └── README.md
 ```
 
-## Cum deschizi local (preview)
+## Previzualizare locala
 
-Deschide `index.html` direct în browser. Pentru a evita restricțiile CORS pe hartă:
-```
+Deschide `index.html` direct în browser. Sau, pentru harta Google Maps fara erori CORS:
+
+```bash
 npx serve .
 # sau
 python3 -m http.server 8080
+# apoi deschide http://localhost:8080
 ```
 
-## Înlocuire imagini
+---
 
-Pune imaginile reale în folderul `images/` și înlocuiește URL-urile `picsum.photos/seed/...` din `index.html`.
+## Cum inlocuiesti imaginile placeholder
 
-| Fișier                          | Dimensiuni   | Unde e folosit     |
-|---------------------------------|--------------|--------------------|
-| `images/hero.jpg`               | 1920×1080px  | Fundalul Hero      |
-| `images/room-double-standard.jpg` | 1200×900px | Cameră Dublă Standard |
-| `images/room-double-premium.jpg`  | 1200×900px | Cameră Dublă Premium  |
-| `images/room-family.jpg`         | 1200×900px  | Cameră Familială   |
-| `images/room-single.jpg`         | 1200×900px  | Cameră Single      |
-| `images/room-apartment.jpg`      | 1200×900px  | Apartament         |
-| `images/gallery-1.jpg` ... `gallery-8.jpg` | 1200×900px | Galerie  |
+Toate imaginile sunt momentan placeholder-uri (div-uri gri cu text). Cand ai fotografii reale:
 
-Format recomandat: **JPG**, comprimat sub 400 KB/imagine (folosește [Squoosh](https://squoosh.app)).
+1. Pune imaginile în folderul `images/`
+2. În `index.html`, înlocuieste fiecare bloc `<div class="img-placeholder ..."><span>...</span></div>` cu:
+   ```html
+   <img src="images/NUME-FISIER.jpg" alt="Descriere" loading="lazy">
+   ```
+3. In `script.js`, actualizeaza array-ul `galleryCaptions` cu descrierile corecte.
+
+### Fisiere de imagini necesare
+
+| Fisier                          | Dimensiuni   | Sectiune         |
+|---------------------------------|--------------|------------------|
+| `images/hero.jpg`               | 960×768px    | Hero (dreapta)   |
+| `images/room-clasica.jpg`       | 800×560px    | Camera Clasica   |
+| `images/room-deluxe.jpg`        | 800×560px    | Camera Deluxe    |
+| `images/room-familiala.jpg`     | 800×560px    | Camera Familiala |
+| `images/room-suite.jpg`         | 800×560px    | Suite Premium    |
+| `images/gallery-1.jpg`          | 800×600px    | Galerie 1        |
+| `images/gallery-2.jpg`          | 800×600px    | Galerie 2        |
+| `images/gallery-3.jpg`          | 800×600px    | Galerie 3        |
+| `images/gallery-4.jpg`          | 800×600px    | Galerie 4        |
+| `images/gallery-5.jpg`          | 800×600px    | Galerie 5        |
+| `images/gallery-6.jpg`          | 800×600px    | Galerie 6        |
+
+Format recomandat: **JPG**, sub 350 KB/imagine — comprima cu [Squoosh](https://squoosh.app).
+
+---
+
+## Cum customizezi camerele
+
+In `index.html`, fiecare `<article class="room-card">` contine:
+- `class="room-name"` — titlul camerei
+- `class="room-desc"` — descrierea (100 cuvinte)
+- `class="room-facilities"` — lista facilitati (tag `<li>`)
+- `class="room-price"` — pretul (ex: `350 lei / noapte` sau `Solicita oferta`)
+
+Adauga sau elimina `<article class="room-card">` pentru a modifica numarul de camere.
+
+---
+
+## Cum customizezi recenziile
+
+In `index.html`, sectiunea `<section id="recenzii">`, fiecare `<article class="review-card">` contine:
+- `class="review-stars"` — numarul de stele (caractere ★)
+- `class="review-text"` — citatul (italic)
+- `class="review-author"` — Nume — Tara
+
+---
+
+## Actualizare date de contact
+
+Cauta in `index.html` si `script.js`:
+- `0722 645 085` — telefon
+- `wa.me/40722645085` — link WhatsApp
+- `Nicolae Beldiceanu nr. 2` — adresa
+
+Inlocuieste cu datele actuale daca se schimba.
+
+---
 
 ## Deployment
 
 ### Netlify (recomandat, gratuit)
-1. Creează cont la [netlify.com](https://netlify.com)
-2. Drag & drop folderul `casa-oana-website` în dashboard
-3. Site live instant — adaugă domeniu custom `casa-oana-iasi.ro` din Settings → Domains
+1. Creeaza cont la [netlify.com](https://netlify.com)
+2. Drag & drop folderul `casa-oana-website` in dashboard
+3. Site live instant — adauga domeniu custom `casa-oana-iasi.ro` din Settings → Domains
 
-### Vercel
-```bash
-npm i -g vercel
-vercel --prod
-```
+### GitHub Pages
+1. Fa push pe GitHub (repo existent: `github.com/websiten1/pensiuneacasaoana`)
+2. Settings → Pages → Branch: `main` → Save
+3. Site live la `https://websiten1.github.io/pensiuneacasaoana`
 
-## Funcționalități incluse
+---
 
-- Header fix cu tranziție la scroll și meniu mobil hamburger
-- Hero fullscreen cu overlay și badge rating
-- 4 carduri Welcome cu animații fade-in
-- 5 camere cu prețuri, facilități și buton rezervare direct
-- Galerie 8 imagini cu lightbox (GLightbox)
-- Ghid înlocuire imagini (collapsible în pagină)
-- 9 facilități în grid 3 coloane
-- Secțiune locație cu Google Maps embed + distanțe
-- 6 recenzii autentice
-- CTA section + footer complet
-- Modal rezervare cu:
-  - Validare completă a tuturor câmpurilor
-  - Calculare automată nopți + preț estimat
-  - Trimitere cerere prefilled pe WhatsApp (+40722645085)
-- Animații fade-in la scroll
-- Responsive complet: desktop / tablet / mobil
-
-## Contact & date pensiune
+## Contact pensiune
 
 - **Telefon / WhatsApp:** 0722 645 085
-- **Adresă:** Nicolae Beldiceanu nr. 2, 700374 Iași
-- **Rating:** 8.6/10 — 541 recenzii
+- **Adresa:** Nicolae Beldiceanu nr. 2, 700374 Iași, România
+- **Rating:** 8.6 / 10 — 541 recenzii verificate

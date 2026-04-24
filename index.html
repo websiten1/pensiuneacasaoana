@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Oana - Pensiunea Ta Caldă în Iași | Nicolae Beldiceanu 2</title>
-    <meta name="description" content="Pensiunea Casa Oana din Iași - ospitalitate tradițională cu confort modern. 1 km de centrul Iașului. WiFi gratuit, parcare gratuită, mic dejun. Tel: 0722 645 085.">
-    <meta property="og:title" content="Casa Oana - Pensiunea Ta Caldă în Iași">
-    <meta property="og:description" content="Ospitalitate tradițională cu confort modern. 541 recenzii pozitive. Locația perfectă pentru exploratorii Iașului.">
+    <title>Casa Oana — Pensiune de Lux în Iași</title>
+    <meta name="description" content="Casa Oana, pensiune de cinci stele în inima Iașului. Service impecabil, camere rafinate, locație ideală. Nicolae Beldiceanu nr. 2, Iași. Tel: 0722 645 085.">
+    <meta property="og:title" content="Casa Oana — Pensiune de Lux în Iași">
+    <meta property="og:description" content="Ospitalitate de lux în inima Iașului. Camere rafinate, mic dejun continental, parcare gratuită.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ro_RO">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <!-- Google Fonts: Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
       "name": "Casa Oana",
-      "description": "Pensiune cu ospitalitate tradițională și confort modern în Iași",
+      "description": "Pensiune de cinci stele cu ospitalitate de lux în inima Iașului",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Nicolae Beldiceanu nr. 2",
@@ -36,593 +43,686 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ================================================
+     HEADER
+     ================================================ -->
 <header id="header">
-    <div class="header-container">
-        <a href="#home" class="logo">
-            <span class="logo-icon">&#127968;</span>
-            <span class="logo-text">Casa Oana</span>
-        </a>
+    <div class="header-inner">
+        <a href="#home" class="header-logo">CASA OANA</a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniu" aria-expanded="false">
+        <button class="nav-toggle" id="navToggle" aria-label="Deschide meniu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
 
-        <nav class="nav" id="mainNav">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#camere" class="nav-link">Camere</a>
-            <a href="#galerie" class="nav-link">Galerie</a>
-            <a href="#recenzii" class="nav-link">Recenzii</a>
-            <a href="#contact" class="nav-link">Contact</a>
+        <nav class="header-nav" id="headerNav" aria-label="Navigare principală">
+            <a href="#home"       class="nav-link">Home</a>
+            <a href="#camere"     class="nav-link">Camere</a>
+            <a href="#galerie"    class="nav-link">Galerie</a>
+            <a href="#locatie"    class="nav-link">Locatie</a>
+            <a href="#recenzii"   class="nav-link">Recenzii</a>
+            <a href="#contact"    class="nav-link">Contact</a>
         </nav>
 
-        <a href="https://wa.me/40722645085" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.522 5.863L0 24l6.272-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.726.895.928-3.624-.234-.373A9.818 9.818 0 1112 21.818z"/>
-            </svg>
-            <span class="wa-label">0722 645 085</span>
-        </a>
+        <button class="btn btn-header" onclick="openModal()" aria-label="Deschide formular de contact">
+            Contacteaza
+        </button>
     </div>
 </header>
 
-<!-- HERO -->
+<!-- ================================================
+     HERO
+     ================================================ -->
 <section id="home" class="hero">
-    <div class="hero-bg">
-        <!-- REPLACE: images/hero.jpg (1920x1080px) -->
-        <img src="https://picsum.photos/seed/casaoana/1920/1080" alt="Casa Oana Iași - pensiune confortabilă" class="hero-img" loading="eager">
-        <div class="hero-overlay" aria-hidden="true"></div>
-    </div>
-    <div class="hero-content">
-        <h1 class="hero-title">Casa Oana</h1>
-        <p class="hero-subtitle">Pensiunea Ta Caldă în Iași</p>
-        <p class="hero-desc">Ospitalitate tradițională cu confort modern. Locația perfectă pentru exploratorii Iașului.</p>
-        <button class="btn btn-primary btn-large" onclick="openModal()">Rezervă Acum</button>
-    </div>
-    <div class="hero-rating">
-        <span class="hero-rating-star">&#11088;</span>
-        <span class="hero-rating-value">8.6<span class="hero-rating-max">/10</span></span>
-        <span class="hero-rating-count">541 recenzii</span>
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <p class="hero-label">Iași, România</p>
+            <h1 class="hero-title">CASA OANA</h1>
+            <p class="hero-subtitle">Ospitalitate de lux în inima Iașului</p>
+            <p class="hero-desc">
+                Pensiune de cinci stele cu service impecabil, camere rafinate
+                și locație ideală pentru oaspeți selectivi. La un kilometru
+                de centrul orașului, departe de agitație, aproape de tot.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="openModal()">Rezerva acum</button>
+                <a href="#camere" class="btn btn-ghost">Descopera camerele</a>
+            </div>
+            <div class="hero-rating">
+                <span class="rating-number">8.6</span>
+                <div class="rating-meta">
+                    <span class="rating-slash">/ 10</span>
+                    <span class="rating-label">541 recenzii verificate</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <!-- REPLACE: <img src="images/hero.jpg" alt="Casa Oana exterior" class="hero-img"> -->
+            <div class="img-placeholder hero-placeholder" aria-label="Imagine Casa Oana">
+                <span>Imagine Casa Oana</span>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- WELCOME -->
-<section id="welcome" class="welcome section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Bine ați venit la Casa Oana</h2>
-            <p class="section-subtitle">
-                Situată la doar 1 km de centrul Iașului, Casa Oana îți oferă o oază de liniște și confort. Fiecare cameră este pregătită cu grijă pentru ca șederea ta să fie memorabilă. Personalul nostru prietenos este disponibil non-stop, combinând ospitalitatea tradițională românească cu toate facilitățile moderne.
+<!-- ================================================
+     WELCOME
+     ================================================ -->
+<section id="welcome" class="welcome section-pad bg-light">
+    <div class="container welcome-inner">
+        <h2 class="section-heading text-center">Bun venit la Casa Oana</h2>
+        <div class="welcome-divider"></div>
+        <div class="welcome-body">
+            <p>
+                Casa Oana s-a născut dintr-o pasiune autentică pentru ospitalitate. Situată pe strada
+                Nicolae Beldiceanu, la doar un kilometru de centrul Iașului, pensiunea noastră a
+                devenit pentru mulți oaspeți un al doilea acasă — un loc în care fiecare detaliu
+                vorbește despre grijă și rafinament.
+            </p>
+            <p>
+                Credem că o ședere cu adevărat memorabilă înseamnă mai mult decât un pat confortabil.
+                Înseamnă atmosfera care te întâmpină la intrare, mirosul micului dejun proaspăt
+                preparat, un personal care anticipează nevoile înainte să fie exprimate. Fiecare
+                cameră a noastră este concepută pentru a oferi intimitate, confort și acel sentiment
+                rar de liniște autentică.
+            </p>
+            <p>
+                Cu un scor de 8.6 din 10 obținut din 541 de recenzii verificate, Casa Oana se
+                confirmă, recenzie după recenzie, drept alegerea firească a oaspeților care nu
+                fac compromisuri cu calitatea.
             </p>
         </div>
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <span class="feature-icon">&#127969;</span>
-                <h3>Locație Ideală</h3>
-                <p>La 1 km de centrul Iașului, cu acces ușor la obiective turistice și transport public</p>
-            </div>
-            <div class="feature-card fade-in">
-                <span class="feature-icon">&#128716;</span>
-                <h3>Confort Garantat</h3>
-                <p>Camere dotate cu AC, WiFi 283 Mbps, TV cu cablu și baie privată modernă</p>
-            </div>
-            <div class="feature-card fade-in">
-                <span class="feature-icon">&#128101;</span>
-                <h3>Personal Prietenos</h3>
-                <p>Recepție disponibilă 24 de ore din 24, gata să te ajute cu orice ai nevoie</p>
-            </div>
-            <div class="feature-card fade-in">
-                <span class="feature-icon">&#11088;</span>
-                <h3>Oaspeți Mulțumiți</h3>
-                <p>Peste 541 recenzii pozitive și un scor de 8.6/10 de la oaspeții noștri</p>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- CAMERE -->
-<section id="camere" class="camere section section--bg">
+<!-- ================================================
+     CAMERE
+     ================================================ -->
+<section id="camere" class="camere section-pad bg-white">
     <div class="container">
-        <div class="section-header">
-            <h2>Camerele Noastre</h2>
-            <p class="section-subtitle">Fiecare cameră este un refugiu al confortului, proiectată pentru relaxarea ta completă</p>
-        </div>
+        <h2 class="section-heading text-center">Camerele Noastre</h2>
+        <div class="section-divider"></div>
+        <p class="section-lead text-center">
+            Patru tipuri de camere, fiecare gândită pentru un anumit tip de oaspete.
+            Toate cu finisaje premium, lenjerie de calitate și liniste garantată.
+        </p>
+
         <div class="rooms-grid">
 
-            <div class="room-card fade-in">
-                <div class="room-image-wrap">
-                    <!-- REPLACE: images/room-double-standard.jpg (1200x900px) -->
-                    <img src="https://picsum.photos/seed/room-std/800/600" alt="Cameră Dublă Standard" loading="lazy" class="room-img">
-                    <span class="room-badge">Standard</span>
+            <!-- Cameră Dublă Clasică -->
+            <article class="room-card fade-in">
+                <!-- REPLACE: <img src="images/room-clasica.jpg" alt="Cameră Dublă Clasică" class="room-img"> -->
+                <div class="img-placeholder room-placeholder" aria-label="Cameră Dublă Clasică">
+                    <span>Imagine cameră</span>
                 </div>
-                <div class="room-content">
-                    <h3>Cameră Dublă Standard</h3>
-                    <p>Cameră confortabilă cu pat matrimonial, ideală pentru cupluri. Decorată în stil tradițional cu accente moderne, oferă tot confortul necesar pentru un sejur plăcut.</p>
-                    <ul class="room-amenities">
-                        <li>&#10052; AC</li><li>&#128225; WiFi</li><li>&#128250; TV</li><li>&#128703; Baie privată</li><li>&#128101; 2 pers.</li>
+                <div class="room-body">
+                    <h3 class="room-name">Cameră Dublă Clasică</h3>
+                    <p class="room-desc">
+                        Eleganță simplă, spațiu generos și lumină naturală. Camera Dublă Clasică
+                        este gândită pentru oaspeții care apreciază liniștea și funcționalitatea
+                        fără ostentație. Pat matrimonial cu somieră reglabilă, birou de lucru,
+                        baie privată complet echipată și vedere spre grădina interioară.
+                        Lenjeria este schimbată zilnic, iar minibar-ul este completat la cerere.
+                        Capacitate maximă: 2 persoane.
+                    </p>
+                    <ul class="room-facilities">
+                        <li>Aer conditionat individual</li>
+                        <li>WiFi 283 Mbps inclus</li>
+                        <li>Baie privata cu dus</li>
+                        <li>TV cablu 40"</li>
+                        <li>Minibar la cerere</li>
+                        <li>Seif electronic</li>
                     </ul>
                     <div class="room-footer">
-                        <div class="room-price"><span class="price-amount">180 lei</span><span class="price-night">/noapte</span></div>
-                        <button class="btn btn-primary" onclick="openModal('Cameră Dublă Standard')">Rezervă Acum</button>
+                        <span class="room-price">Solicita oferta</span>
+                        <button class="btn btn-outline" onclick="openModal('Cameră Dublă Clasică')">
+                            Rezerva aceasta camera
+                        </button>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="room-card fade-in">
-                <div class="room-image-wrap">
-                    <!-- REPLACE: images/room-double-premium.jpg (1200x900px) -->
-                    <img src="https://picsum.photos/seed/room-prem/800/600" alt="Cameră Dublă Premium" loading="lazy" class="room-img">
-                    <span class="room-badge room-badge--premium">Premium</span>
+            <!-- Cameră Dublă Deluxe -->
+            <article class="room-card fade-in">
+                <!-- REPLACE: <img src="images/room-deluxe.jpg" alt="Cameră Dublă Deluxe" class="room-img"> -->
+                <div class="img-placeholder room-placeholder" aria-label="Cameră Dublă Deluxe">
+                    <span>Imagine cameră</span>
                 </div>
-                <div class="room-content">
-                    <h3>Cameră Dublă Premium</h3>
-                    <p>Experiența supremă a confortului cu pat king-size și finisaje de calitate superioară. Lenjerie premium, amenajare elegantă și dotări complete pentru o ședere de neuitat.</p>
-                    <ul class="room-amenities">
-                        <li>&#10052; AC</li><li>&#128225; WiFi</li><li>&#128250; TV</li><li>&#128703; Baie privată</li><li>&#128081; King bed</li>
+                <div class="room-body">
+                    <h3 class="room-name">Cameră Dublă Deluxe</h3>
+                    <p class="room-desc">
+                        Un pas mai sus față de clasic. Camera Deluxe oferă suprafață extinsă,
+                        pat king-size cu topper de memorie, două fotolii de relaxare și o baie
+                        dotată cu cadă și duș separat. Fereastra panoramică aduce lumina după-amiezii
+                        direct în cameră, creând o atmosferă calmă și rafinată. Parquet natural,
+                        jaluzele blackout, halat și papuci de baie incluse.
+                        Capacitate maximă: 2 persoane.
+                    </p>
+                    <ul class="room-facilities">
+                        <li>Aer conditionat individual</li>
+                        <li>WiFi 283 Mbps inclus</li>
+                        <li>Baie cu cada si dus separat</li>
+                        <li>TV cablu 50"</li>
+                        <li>Minibar complet</li>
+                        <li>Halat si papuci incluse</li>
                     </ul>
                     <div class="room-footer">
-                        <div class="room-price"><span class="price-amount">220 lei</span><span class="price-night">/noapte</span></div>
-                        <button class="btn btn-primary" onclick="openModal('Cameră Dublă Premium')">Rezervă Acum</button>
+                        <span class="room-price">Solicita oferta</span>
+                        <button class="btn btn-outline" onclick="openModal('Cameră Dublă Deluxe')">
+                            Rezerva aceasta camera
+                        </button>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="room-card fade-in">
-                <div class="room-image-wrap">
-                    <!-- REPLACE: images/room-family.jpg (1200x900px) -->
-                    <img src="https://picsum.photos/seed/room-fam/800/600" alt="Cameră Familială" loading="lazy" class="room-img">
-                    <span class="room-badge room-badge--family">Familie</span>
+            <!-- Cameră Familială -->
+            <article class="room-card fade-in">
+                <!-- REPLACE: <img src="images/room-familiala.jpg" alt="Cameră Familială" class="room-img"> -->
+                <div class="img-placeholder room-placeholder" aria-label="Cameră Familială">
+                    <span>Imagine cameră</span>
                 </div>
-                <div class="room-content">
-                    <h3>Cameră Familială</h3>
-                    <p>Spațioasă și prietenoasă pentru întreaga familie, cu pat matrimonial și două paturi single. Perfectă pentru familii cu copii care doresc să exploreze frumusețile Iașului.</p>
-                    <ul class="room-amenities">
-                        <li>&#10052; AC</li><li>&#128225; WiFi</li><li>&#128250; TV</li><li>&#128703; Baie privată</li><li>&#128106; 3-4 pers.</li>
+                <div class="room-body">
+                    <h3 class="room-name">Cameră Familială</h3>
+                    <p class="room-desc">
+                        Concepută special pentru familii, această cameră combină spațiul cu confortul
+                        în proporții ideale. Un pat matrimonial și două paturi single ocupă cu eleganță
+                        cei 35 de metri pătrați, lăsând suficient spațiu de circulație. Baie privată
+                        complet echipată, zonă de joc pentru copii amenajată discret, frigider și
+                        spațiu de depozitare generos pentru bagaje. Copiii sunt bineveniți.
+                        Capacitate maximă: 4 persoane.
+                    </p>
+                    <ul class="room-facilities">
+                        <li>Aer conditionat individual</li>
+                        <li>WiFi 283 Mbps inclus</li>
+                        <li>Baie privata complet echipata</li>
+                        <li>TV cablu 50"</li>
+                        <li>Frigider</li>
+                        <li>Spatiu depozitare extins</li>
                     </ul>
                     <div class="room-footer">
-                        <div class="room-price"><span class="price-amount">300 lei</span><span class="price-night">/noapte</span></div>
-                        <button class="btn btn-primary" onclick="openModal('Cameră Familială')">Rezervă Acum</button>
+                        <span class="room-price">Solicita oferta</span>
+                        <button class="btn btn-outline" onclick="openModal('Cameră Familială')">
+                            Rezerva aceasta camera
+                        </button>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="room-card fade-in">
-                <div class="room-image-wrap">
-                    <!-- REPLACE: images/room-single.jpg (1200x900px) -->
-                    <img src="https://picsum.photos/seed/room-sng/800/600" alt="Cameră Single" loading="lazy" class="room-img">
-                    <span class="room-badge">Single</span>
+            <!-- Suite Premium -->
+            <article class="room-card fade-in">
+                <!-- REPLACE: <img src="images/room-suite.jpg" alt="Suite Premium" class="room-img"> -->
+                <div class="img-placeholder room-placeholder" aria-label="Suite Premium">
+                    <span>Imagine cameră</span>
                 </div>
-                <div class="room-content">
-                    <h3>Cameră Single</h3>
-                    <p>Ideală pentru călătorii de afaceri sau turistul solo. Compactă și funcțională, cu toate facilitățile necesare pentru un sejur plăcut la cel mai bun preț.</p>
-                    <ul class="room-amenities">
-                        <li>&#10052; AC</li><li>&#128225; WiFi</li><li>&#128250; TV</li><li>&#128703; Baie privată</li><li>&#129523; 1 pers.</li>
+                <div class="room-body">
+                    <h3 class="room-name">Suite Premium</h3>
+                    <p class="room-desc">
+                        Cel mai rafinat spatiu din Casa Oana. Suite-ul Premium dispune de dormitor
+                        separat, salon de zi cu canapea și birou executiv, baie de lux cu cadă
+                        free-standing, duș cu ploaie și produse cosmetice premium. Parquet din
+                        lemn masiv, perdele de catifea, pat king-size cu saltea ortopedică și
+                        lenjerie din bumbac 100%. Service personalizat la cerere.
+                        Capacitate maximă: 2 persoane.
+                    </p>
+                    <ul class="room-facilities">
+                        <li>Aer conditionat individual</li>
+                        <li>WiFi 283 Mbps inclus</li>
+                        <li>Baie de lux cu cada free-standing</li>
+                        <li>TV 4K 55" in dormitor si salon</li>
+                        <li>Minibar premium complet</li>
+                        <li>Service personalizat la cerere</li>
                     </ul>
                     <div class="room-footer">
-                        <div class="room-price"><span class="price-amount">120 lei</span><span class="price-night">/noapte</span></div>
-                        <button class="btn btn-primary" onclick="openModal('Cameră Single')">Rezervă Acum</button>
+                        <span class="room-price">Solicita oferta</span>
+                        <button class="btn btn-outline" onclick="openModal('Suite Premium')">
+                            Rezerva aceasta camera
+                        </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="room-card fade-in">
-                <div class="room-image-wrap">
-                    <!-- REPLACE: images/room-apartment.jpg (1200x900px) -->
-                    <img src="https://picsum.photos/seed/room-apt/800/600" alt="Apartament" loading="lazy" class="room-img">
-                    <span class="room-badge room-badge--premium">Apartament</span>
-                </div>
-                <div class="room-content">
-                    <h3>Apartament</h3>
-                    <p>Maxim spațiu și intimitate cu sufragerie separată și dormitor confortabil. Ideal pentru sejururi mai lungi sau cupluri care doresc confortul de acasă.</p>
-                    <ul class="room-amenities">
-                        <li>&#10052; AC</li><li>&#128225; WiFi</li><li>&#128250; TV</li><li>&#127859; Bucătărie</li><li>&#128101; 2-4 pers.</li>
-                    </ul>
-                    <div class="room-footer">
-                        <div class="room-price"><span class="price-amount">350 lei</span><span class="price-night">/noapte</span></div>
-                        <button class="btn btn-primary" onclick="openModal('Apartament')">Rezervă Acum</button>
-                    </div>
-                </div>
-            </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<!-- GALERIE -->
-<section id="galerie" class="galerie section">
+<!-- ================================================
+     GALERIE
+     ================================================ -->
+<section id="galerie" class="galerie section-pad bg-light">
     <div class="container">
-        <div class="section-header">
-            <h2>Descoperă Casa Oana</h2>
-            <p class="section-subtitle">Camere, terasă, bucătărie, hol și spații comune — priviți prin ochii oaspeților noștri</p>
-        </div>
+        <h2 class="section-heading text-center">Galerie</h2>
+        <div class="section-divider"></div>
+        <p class="section-lead text-center">
+            Spatii fotografiate cu grijă, exact cum le veti găsi la sosire.
+        </p>
+
         <div class="gallery-grid">
-            <!-- REPLACE: images/gallery-1.jpg ... gallery-8.jpg (1200x900px) -->
-            <a href="https://picsum.photos/seed/gal1/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Cameră dublă">
-                <img src="https://picsum.photos/seed/gal1/600/450" alt="Cameră dublă" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal2/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Hol de primire">
-                <img src="https://picsum.photos/seed/gal2/600/450" alt="Hol primire" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal3/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Terasă">
-                <img src="https://picsum.photos/seed/gal3/600/450" alt="Terasă" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal4/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Baie modernă">
-                <img src="https://picsum.photos/seed/gal4/600/450" alt="Baie modernă" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal5/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Cameră familială">
-                <img src="https://picsum.photos/seed/gal5/600/450" alt="Cameră familială" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal6/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Exterior">
-                <img src="https://picsum.photos/seed/gal6/600/450" alt="Exterior" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal7/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Mic dejun">
-                <img src="https://picsum.photos/seed/gal7/600/450" alt="Mic dejun" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-            <a href="https://picsum.photos/seed/gal8/1200/900" class="glightbox gallery-item fade-in" data-gallery="casa-oana" data-glightbox="title: Apartament">
-                <img src="https://picsum.photos/seed/gal8/600/450" alt="Apartament" loading="lazy">
-                <div class="gallery-overlay"><span>+</span></div>
-            </a>
-        </div>
-
-        <details class="image-guide">
-            <summary>&#128444;&#65039; Cum să înlocuiești imaginile cu fotografii reale</summary>
-            <div class="image-guide-content">
-                <h4>Hero (1 imagine)</h4>
-                <ul>
-                    <li><code>images/hero.jpg</code> — exterior sau cameră reprezentativă, <strong>1920×1080px</strong></li>
-                </ul>
-                <h4>Camere (5 imagini — 1200×900px)</h4>
-                <ul>
-                    <li><code>images/room-double-standard.jpg</code></li>
-                    <li><code>images/room-double-premium.jpg</code></li>
-                    <li><code>images/room-family.jpg</code></li>
-                    <li><code>images/room-single.jpg</code></li>
-                    <li><code>images/room-apartment.jpg</code></li>
-                </ul>
-                <h4>Galerie (8 imagini — 1200×900px)</h4>
-                <ul>
-                    <li><code>images/gallery-1.jpg</code> până la <code>images/gallery-8.jpg</code></li>
-                </ul>
-                <p><strong>Instrucțiuni:</strong> Pune imaginile în folderul <code>images/</code> și înlocuiește URL-urile <code>picsum.photos/seed/...</code> din cod cu calea locală (ex: <code>src="images/gallery-1.jpg"</code>). Format recomandat: JPG, sub 400 KB/imagine.</p>
+            <!-- REPLACE fiecare div.img-placeholder cu <img src="images/gallery-N.jpg" alt="..."> -->
+            <div class="gallery-item fade-in" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="Deschide imagine 1">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
             </div>
-        </details>
+            <div class="gallery-item fade-in" onclick="openLightbox(1)" role="button" tabindex="0" aria-label="Deschide imagine 2">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
+            </div>
+            <div class="gallery-item fade-in" onclick="openLightbox(2)" role="button" tabindex="0" aria-label="Deschide imagine 3">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
+            </div>
+            <div class="gallery-item fade-in" onclick="openLightbox(3)" role="button" tabindex="0" aria-label="Deschide imagine 4">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
+            </div>
+            <div class="gallery-item fade-in" onclick="openLightbox(4)" role="button" tabindex="0" aria-label="Deschide imagine 5">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
+            </div>
+            <div class="gallery-item fade-in" onclick="openLightbox(5)" role="button" tabindex="0" aria-label="Deschide imagine 6">
+                <div class="img-placeholder gallery-placeholder">
+                    <span>Imagine galerie</span>
+                </div>
+                <div class="gallery-overlay"><span class="gallery-zoom">&#8853;</span></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- FACILITĂȚI -->
-<section id="facilitati" class="facilitati section section--bg">
+<!-- ================================================
+     FACILITĂȚI
+     ================================================ -->
+<section id="facilitati" class="facilitati section-pad bg-white">
     <div class="container">
-        <div class="section-header">
-            <h2>Facilitățile Noastre</h2>
-            <p class="section-subtitle">Tot ce ai nevoie pentru un sejur confortabil și relaxant</p>
-        </div>
+        <h2 class="section-heading text-center">Facilitati</h2>
+        <div class="section-divider"></div>
+
         <div class="amenities-grid">
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128225;</span>
-                <h3>WiFi 283 Mbps</h3>
-                <p>Internet de mare viteză, gratuit în toată pensiunea</p>
+                <h4 class="amenity-name">WiFi Gratuit</h4>
+                <p class="amenity-desc">Conexiune de 283 Mbps disponibilă în toate camerele și spațiile comune, fără restricții.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128664;</span>
-                <h3>Parcare Gratuită</h3>
-                <p>Parcare privată și securizată pentru toți oaspeții</p>
+                <h4 class="amenity-name">Parcare Privată</h4>
+                <p class="amenity-desc">Parcare securizată, supravegheată video, inclusă în tariful sejurului. Acces non-stop.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#127859;</span>
-                <h3>Mic Dejun Continental</h3>
-                <p>Mic dejun proaspăt în fiecare dimineață, inclus în preț</p>
+                <h4 class="amenity-name">Mic Dejun Continental</h4>
+                <p class="amenity-desc">Bufet proaspăt pregătit zilnic cu produse locale, servit între orele 7:00 și 10:30.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#10052;</span>
-                <h3>Aer Condiționat 24/7</h3>
-                <p>Climatizare individuală în fiecare cameră, tot anul</p>
+                <h4 class="amenity-name">Aer Conditionat</h4>
+                <p class="amenity-desc">Sistem de climatizare individual în fiecare cameră, controlat de oaspete independent.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128222;</span>
-                <h3>Recepție 24 Ore</h3>
-                <p>Personal disponibil non-stop pentru orice nevoie</p>
+                <h4 class="amenity-name">Receptie 24/7</h4>
+                <p class="amenity-desc">Personal disponibil non-stop pentru check-in, asistență și orice nevoie apărută.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#9728;&#65039;</span>
-                <h3>Terasă Sezonieră</h3>
-                <p>Spațiu exterior relaxant pentru liniște și socializare</p>
+                <h4 class="amenity-name">Terasa Sezoniera</h4>
+                <p class="amenity-desc">Spațiu exterior amenajat pentru relaxare, disponibil în sezonul cald. Mobilier de grădină inclus.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128250;</span>
-                <h3>TV &amp; Cablu</h3>
-                <p>Televizor cu pachete de cablu în fiecare cameră</p>
+                <h4 class="amenity-name">TV Cablu</h4>
+                <p class="amenity-desc">Televizoare cu acces la canale internaționale în toate camerele. Smart TV la Suite Premium.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128703;</span>
-                <h3>Baie Privată</h3>
-                <p>Baie modernă cu duș, articole de toaletă și prosoape zilnic</p>
+                <h4 class="amenity-name">Baie Luxoasa</h4>
+                <p class="amenity-desc">Fiecare cameră beneficiază de baie privată cu produse cosmetice premium și prosoape zilnice.</p>
             </div>
             <div class="amenity-card fade-in">
-                <span class="amenity-icon">&#128274;</span>
-                <h3>Ușă de Securitate</h3>
-                <p>Sisteme de securitate pentru siguranța oaspeților</p>
+                <h4 class="amenity-name">Usa de Securitate</h4>
+                <p class="amenity-desc">Sisteme de acces securizat cu card electronic. Seif individual disponibil în fiecare cameră.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- LOCAȚIE -->
-<section id="locatie" class="locatie section">
+<!-- ================================================
+     LOCATIE
+     ================================================ -->
+<section id="locatie" class="locatie section-pad bg-light">
     <div class="container">
-        <div class="section-header">
-            <h2>Locația Noastră</h2>
-            <p class="section-subtitle">Situați în inima Iașului, la câteva minute de principalele atracții</p>
-        </div>
+        <h2 class="section-heading text-center">Locatie</h2>
+        <div class="section-divider"></div>
+
         <div class="location-grid">
-            <div class="map-container">
-                <iframe
-                    src="https://maps.google.com/maps?q=Nicolae+Beldiceanu+2,+Iasi,+Romania&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    title="Locația Casa Oana Iași"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
             <div class="location-info">
-                <div class="location-block">
-                    <h3>&#128205; Adresă</h3>
+                <div class="location-address">
+                    <h3 class="location-heading">Adresa</h3>
                     <p>Nicolae Beldiceanu nr. 2<br>700374 Iași, România</p>
-                    <a href="https://maps.google.com/?q=Nicolae+Beldiceanu+2,+Iasi,+Romania" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Deschide în Google Maps</a>
+                    <p class="location-phone">
+                        <a href="tel:+40722645085">0722 645 085</a>
+                    </p>
+                    <p class="location-hours">Receptie deschisa 24 de ore</p>
                 </div>
-                <div class="location-block">
-                    <h3>&#128207; Distanțe</h3>
-                    <ul class="distance-list">
-                        <li><span>&#127963; Centrul Iașului</span><span>1 km</span></li>
-                        <li><span>&#127963; Palatul Culturii</span><span>1.2 km</span></li>
-                        <li><span>&#9962; Catedrala Mitropolitană</span><span>1.5 km</span></li>
-                        <li><span>&#128717; Shopping Palas</span><span>2 km</span></li>
-                        <li><span>&#128646; Gara Iași</span><span>1.8 km</span></li>
-                        <li><span>&#9992;&#65039; Aeroportul Iași</span><span>8 km</span></li>
+
+                <div class="location-distances">
+                    <h3 class="location-heading">Distante</h3>
+                    <ul class="distances-list">
+                        <li>
+                            <span class="dist-place">Centrul Iasului</span>
+                            <span class="dist-value">1 km</span>
+                        </li>
+                        <li>
+                            <span class="dist-place">Piata Stefan cel Mare</span>
+                            <span class="dist-value">800 m</span>
+                        </li>
+                        <li>
+                            <span class="dist-place">Statie transport public</span>
+                            <span class="dist-value">400 m</span>
+                        </li>
+                        <li>
+                            <span class="dist-place">Gara Iasi</span>
+                            <span class="dist-value">2,5 km</span>
+                        </li>
+                        <li>
+                            <span class="dist-place">Aeroportul Iasi</span>
+                            <span class="dist-value">8 km</span>
+                        </li>
+                        <li>
+                            <span class="dist-place">Palatul Culturii</span>
+                            <span class="dist-value">1,2 km</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="location-block">
-                    <h3>&#128652; Transport</h3>
-                    <p>Stație de autobuz la 200m distanță. Acces direct la principalele linii de transport public. Parcare gratuită pe proprietate pentru toți oaspeții.</p>
-                </div>
+
+                <a href="https://maps.google.com/?q=Nicolae+Beldiceanu+2,+Iasi,+Romania"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-outline location-map-btn">
+                    Deschide in Google Maps
+                </a>
+            </div>
+
+            <div class="location-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=Nicolae+Beldiceanu+2,+Iasi,+Romania&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Locatia Casa Oana, Iasi"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Harta Google Maps cu locatia Casa Oana">
+                </iframe>
             </div>
         </div>
     </div>
 </section>
 
-<!-- RECENZII -->
-<section id="recenzii" class="recenzii section section--bg">
+<!-- ================================================
+     RECENZII
+     ================================================ -->
+<section id="recenzii" class="recenzii section-pad bg-white">
     <div class="container">
-        <div class="section-header">
-            <h2>Ce Spun Oaspeții Noștri</h2>
-            <div class="overall-rating">
-                <span class="overall-score">8.6</span>
-                <div class="overall-meta">
-                    <div class="overall-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                    <p>din 541 recenzii verificate</p>
-                </div>
-            </div>
-        </div>
+        <h2 class="section-heading text-center">Recenzii ale Oaspetilor</h2>
+        <div class="section-divider"></div>
+        <p class="section-lead text-center">
+            8.6 din 10 — 541 de recenzii verificate de la oaspeți reali.
+        </p>
+
         <div class="reviews-grid">
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Cea mai caldă primire în Iași! Camera era impecabilă, personalul extrem de amabil și prețul foarte bun. Cu siguranță mă voi întoarce!"</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">R</span>
-                    <span class="reviewer-name">Raluca &mdash; România</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Cea mai caldă primire pe care am primit-o vreodată la o pensiune din România.
+                    Camera era impecabilă, liniștea deplină, iar personalul — cu adevărat deosebit.
+                    Vom reveni cu siguranță."
+                </blockquote>
+                <footer class="review-author">Raluca &mdash; România</footer>
             </article>
+
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Preț excelent și personal de 5 stele! Micul dejun a fost delicios, camera curată și liniștită. Locație perfectă pentru a vizita Iașul."</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">C</span>
-                    <span class="reviewer-name">Codrin &mdash; România</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Prețul excelent pentru calitatea oferită. Micul dejun a fost o surpriză plăcută —
+                    proaspăt, variat, servit cu atenție. Camera curată, patul confortabil,
+                    locație la distanță de mers pe jos de tot ce contează."
+                </blockquote>
+                <footer class="review-author">Codrin &mdash; România</footer>
             </article>
+
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Camera curată, locație perfectă pentru vizitarea Iașului. Personalul a fost mereu zâmbitor și de ajutor. Recomand cu toată inima!"</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">M</span>
-                    <span class="reviewer-name">Maria &mdash; București</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Am stat 3 nopți și fiecare a fost mai plăcută decât precedenta. Atmosferă
+                    rafinată, personal prezent fără să fie intruziv. Exact ce căutam pentru
+                    un sejur de calitate la Iași."
+                </blockquote>
+                <footer class="review-author">Maria &mdash; București</footer>
             </article>
+
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Petit-déjeuner délicieux et personnel très accueillant! La chambre était propre et confortable. Je recommande vivement cet établissement!"</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">P</span>
-                    <span class="reviewer-name">Pierre &mdash; Franța</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Petit-déjeuner délicieux, chambre impeccable, personnel attentionné.
+                    Un hébergement qui mérite vraiment ses étoiles. Je recommande sans
+                    réserve à tous ceux qui visitent Iași."
+                </blockquote>
+                <footer class="review-author">Pierre &mdash; Franța</footer>
             </article>
+
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Perfect location, clean rooms, friendly staff. Great value for money — will definitely come back on my next visit to Iași!"</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">J</span>
-                    <span class="reviewer-name">John &mdash; UK</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Perfectly located, beautifully kept and run by genuinely hospitable people.
+                    The room was spotless, the breakfast generous and fresh.
+                    Outstanding value and an outstanding stay."
+                </blockquote>
+                <footer class="review-author">John &mdash; Marea Britanie</footer>
             </article>
+
             <article class="review-card fade-in">
-                <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <blockquote>"Locul ideal pentru o vacanță relaxantă. Personal extrem de amabil, camera spațioasă și curată. WiFi-ul rapid a fost un plus excelent!"</blockquote>
-                <footer class="reviewer">
-                    <span class="reviewer-avatar">A</span>
-                    <span class="reviewer-name">Alexandru &mdash; Cluj</span>
-                </footer>
+                <div class="review-stars" aria-label="5 din 5 stele">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-text">
+                    "Am ales Casa Oana pentru o conferință la Iași și nu aș fi putut alege mai bine.
+                    WiFi impecabil, liniște, cameră spațioasă. Personalul a rezolvat fiecare
+                    solicitare cu promptitudine și profesionalism."
+                </blockquote>
+                <footer class="review-author">Alexandru &mdash; Cluj-Napoca</footer>
             </article>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
+<!-- ================================================
+     CTA
+     ================================================ -->
 <section class="cta-section">
-    <div class="container">
-        <h2>Gata de o Ședere de Neuitat?</h2>
-        <p>Nu e o cameră. E o acasă pentru timpul tău în Iași. Rezervă acum și bucură-te de ospitalitatea tradițională românească la Casa Oana.</p>
-        <div class="cta-buttons">
-            <button class="btn btn-cta-primary btn-large" onclick="openModal()">Rezervă Acum</button>
-            <a href="https://wa.me/40722645085" class="btn btn-cta-outline btn-large" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.522 5.863L0 24l6.272-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.726.895.928-3.624-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-                Contactează pe WhatsApp
+    <div class="container cta-inner">
+        <h2 class="cta-heading">Gata sa te cazezi la Casa Oana?</h2>
+        <p class="cta-sub">
+            Rezervati acum și beneficiati de atentia noastră personalizată
+            de la prima interacțiune până la check-out.
+        </p>
+        <div class="cta-actions">
+            <button class="btn btn-cta-white" onclick="openModal()">Rezerva acum</button>
+            <a href="https://wa.me/40722645085" class="btn btn-cta-outline"
+               target="_blank" rel="noopener noreferrer">
+                Contacteaza pe WhatsApp
             </a>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================================================
+     FOOTER
+     ================================================ -->
 <footer id="contact" class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo">&#127968; Casa Oana</div>
-                <p>Ospitalitate tradițională românească cu confort modern în inima Iașului.</p>
-                <div class="footer-social">
-                    <a href="https://wa.me/40722645085" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.522 5.863L0 24l6.272-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.726.895.928-3.624-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h4>Link-uri Rapide</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#camere">Camere</a></li>
-                    <li><a href="#galerie">Galerie</a></li>
-                    <li><a href="#recenzii">Recenzii</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <address class="footer-address">
-                    <p>&#128205; Nicolae Beldiceanu nr. 2<br>700374 Iași, România</p>
-                    <p>&#128222; <a href="tel:+40722645085">0722 645 085</a></p>
-                    <p>&#128172; <a href="https://wa.me/40722645085" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                    <p><a href="https://maps.google.com/?q=Nicolae+Beldiceanu+2,+Iasi" target="_blank" rel="noopener noreferrer">&#128506;&#65039; Google Maps</a></p>
-                </address>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#privacy">Politica de Confidențialitate</a></li>
-                    <li><a href="#terms">Termeni și Condiții</a></li>
-                    <li><a href="#cookies">Politica Cookie-uri</a></li>
-                </ul>
-            </div>
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">CASA OANA</span>
+            <p class="footer-tagline">Ospitalitate de lux în inima Iașului.</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Casa Oana Iași. Toate drepturile rezervate.</p>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Navigare</h4>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#camere">Camere</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#locatie">Locatie</a></li>
+                <li><a href="#recenzii">Recenzii</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Contact</h4>
+            <address class="footer-contact-info">
+                <p>Nicolae Beldiceanu nr. 2</p>
+                <p>700374 Iași, România</p>
+                <p><a href="tel:+40722645085">0722 645 085</a></p>
+            </address>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Social</h4>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://wa.me/40722645085" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://maps.google.com/?q=Nicolae+Beldiceanu+2,+Iasi" target="_blank" rel="noopener noreferrer">
+                        Google Maps
+                    </a>
+                </li>
+                <li><a href="#privacy">Confidentialitate</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Casa Oana, Iași. Toate drepturile rezervate.</p>
         </div>
     </div>
 </footer>
 
-<!-- BOOKING MODAL -->
-<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
-        <button class="modal-close" onclick="closeModal()" aria-label="Închide">&times;</button>
+<!-- ================================================
+     BOOKING MODAL
+     ================================================ -->
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="Inchide fereastra">&times;</button>
 
-        <div id="bookingFormWrapper">
-            <h2 id="modalTitle">Rezervă Camera Ta</h2>
-            <p class="modal-subtitle">Completează formularul și te contactăm în maxim 2 ore</p>
+        <div id="modalFormView">
+            <h2 class="modal-heading" id="modalHeading">Rezervare</h2>
+            <p class="modal-sub">Completati formularul. Va vom contacta in cel mult 2 ore.</p>
 
             <form id="bookingForm" class="booking-form" novalidate>
-                <div class="form-group">
-                    <label for="roomType">Tip Cameră <span class="required">*</span></label>
-                    <select id="roomType" name="roomType" required>
-                        <option value="">Selectează camera...</option>
-                        <option value="Cameră Dublă Standard">Cameră Dublă Standard — 180 lei/noapte</option>
-                        <option value="Cameră Dublă Premium">Cameră Dublă Premium — 220 lei/noapte</option>
-                        <option value="Cameră Familială">Cameră Familială — 300 lei/noapte</option>
-                        <option value="Cameră Single">Cameră Single — 120 lei/noapte</option>
-                        <option value="Apartament">Apartament — 350 lei/noapte</option>
+
+                <div class="field-group">
+                    <label class="field-label" for="f-room">Tip camera <span class="req">*</span></label>
+                    <select id="f-room" name="room" required>
+                        <option value="">Selectati o camera...</option>
+                        <option value="Cameră Dublă Clasică">Cameră Dublă Clasică</option>
+                        <option value="Cameră Dublă Deluxe">Cameră Dublă Deluxe</option>
+                        <option value="Cameră Familială">Cameră Familială</option>
+                        <option value="Suite Premium">Suite Premium</option>
                     </select>
-                    <span class="field-error" role="alert"></span>
+                    <span class="field-err" role="alert"></span>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="checkin">Data Sosirii <span class="required">*</span></label>
-                        <input type="date" id="checkin" name="checkin" required>
-                        <span class="field-error" role="alert"></span>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label class="field-label" for="f-checkin">Data sosirii <span class="req">*</span></label>
+                        <input type="date" id="f-checkin" name="checkin" required>
+                        <span class="field-err" role="alert"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="checkout">Data Plecării <span class="required">*</span></label>
-                        <input type="date" id="checkout" name="checkout" required>
-                        <span class="field-error" role="alert"></span>
-                    </div>
-                </div>
-
-                <div class="nights-display" id="nightsDisplay" aria-live="polite">
-                    <span id="nightsCount"></span>
-                    <span id="priceEstimate"></span>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="adults">Adulți <span class="required">*</span></label>
-                        <input type="number" id="adults" name="adults" min="1" max="6" value="2" required>
-                        <span class="field-error" role="alert"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="children">Copii <span class="optional">(opțional)</span></label>
-                        <input type="number" id="children" name="children" min="0" max="6" value="0">
+                    <div class="field-group">
+                        <label class="field-label" for="f-checkout">Data plecarii <span class="req">*</span></label>
+                        <input type="date" id="f-checkout" name="checkout" required>
+                        <span class="field-err" role="alert"></span>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="fullName">Nume Complet <span class="required">*</span></label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Ion Ionescu" required autocomplete="name">
-                    <span class="field-error" role="alert"></span>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label class="field-label" for="f-adults">Adulti <span class="req">*</span></label>
+                        <input type="number" id="f-adults" name="adults" min="1" max="6" value="2" required>
+                        <span class="field-err" role="alert"></span>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label" for="f-children">Copii</label>
+                        <input type="number" id="f-children" name="children" min="0" max="6" value="0">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="ion@email.com" required autocomplete="email">
-                    <span class="field-error" role="alert"></span>
+                <div class="field-group">
+                    <label class="field-label" for="f-name">Nume complet <span class="req">*</span></label>
+                    <input type="text" id="f-name" name="name" placeholder="Ion Popescu" required autocomplete="name">
+                    <span class="field-err" role="alert"></span>
                 </div>
 
-                <div class="form-group">
-                    <label for="phone">Telefon <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" placeholder="07XX XXX XXX" required autocomplete="tel">
-                    <span class="field-error" role="alert"></span>
+                <div class="field-group">
+                    <label class="field-label" for="f-email">Email <span class="req">*</span></label>
+                    <input type="email" id="f-email" name="email" placeholder="ion@email.com" required autocomplete="email">
+                    <span class="field-err" role="alert"></span>
                 </div>
 
-                <div class="form-group">
-                    <label for="requests">Cerințe Speciale <span class="optional">(opțional)</span></label>
-                    <textarea id="requests" name="requests" rows="3" placeholder="Etaj preferat, pat suplimentar, sosire târzie..."></textarea>
+                <div class="field-group">
+                    <label class="field-label" for="f-phone">Telefon <span class="req">*</span></label>
+                    <input type="tel" id="f-phone" name="phone" placeholder="07XX XXX XXX" required autocomplete="tel">
+                    <span class="field-err" role="alert"></span>
                 </div>
 
-                <div class="form-group form-checkbox">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">Accept <a href="#terms">termenii și condițiile</a> <span class="required">*</span></label>
-                    <span class="field-error" role="alert"></span>
+                <div class="field-group">
+                    <label class="field-label" for="f-requests">Cerinte speciale <span class="opt">(optional)</span></label>
+                    <textarea id="f-requests" name="requests" rows="3"
+                        placeholder="Etaj preferat, pat suplimentar, sosire dupa ora 22..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-large btn-full">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.522 5.863L0 24l6.272-1.507A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.726.895.928-3.624-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-                    Trimite Cererea pe WhatsApp
-                </button>
+                <div class="field-group field-check">
+                    <input type="checkbox" id="f-terms" name="terms" required>
+                    <label for="f-terms">
+                        Accept <a href="#privacy">termenii si conditiile</a> <span class="req">*</span>
+                    </label>
+                    <span class="field-err" role="alert"></span>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary btn-full">Trimite</button>
+                    <button type="button" class="btn btn-ghost btn-full" onclick="closeModal()">Anuleaza</button>
+                </div>
             </form>
         </div>
 
-        <div class="booking-success" id="bookingSuccess">
-            <span class="success-icon">&#9989;</span>
-            <h3>Mulțumim!</h3>
-            <p>Cererea ta a fost trimisă. Vei fi contactat în maxim <strong>2 ore</strong>!</p>
-            <button class="btn btn-primary" onclick="closeModal()">Închide</button>
+        <div id="modalSuccessView" class="modal-success" hidden>
+            <div class="success-mark">&#10003;</div>
+            <h3 class="success-heading">Cererea a fost trimisa.</h3>
+            <p class="success-body">
+                Va multumim. Veti fi contactat in cel mult 2 ore pentru confirmarea rezervarii.
+            </p>
+            <button class="btn btn-outline" onclick="closeModal()">Inchide</button>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<!-- ================================================
+     GALLERY LIGHTBOX
+     ================================================ -->
+<div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Galerie foto" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Inchide galeria">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Imaginea anterioara">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Imaginea urmatoare">&#8250;</button>
+    <div class="lightbox-content">
+        <!-- When real images are added, an <img> replaces the placeholder below -->
+        <div class="img-placeholder lightbox-placeholder" id="lightboxPlaceholder">
+            <span id="lightboxCaption">Imagine galerie</span>
+        </div>
+        <p class="lightbox-counter" id="lightboxCounter">1 / 6</p>
+    </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

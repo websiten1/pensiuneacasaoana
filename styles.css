@@ -4,13 +4,16 @@
 :root {
     /* Colors */
     --white:        #FFFFFF;
-    --grey-light:   #F8F7F5;
+    --grey-light:   #F5F3F0;
     --beige:        #E8E4DF;
-    --brown:        #5A4A3A;
-    --brown-dark:   #3d3020;
+    --green:        #A4AC86;
+    --green-light:  #D4DCC8;
+    --green-dark:   #7d8a68;
+    --brown:        #6B5B4E;
+    --brown-dark:   #4d3f34;
     --text-dark:    #3D3D3D;
-    --text-mid:     #6B6B6B;
-    --gold:         #B8956A;
+    --text-mid:     #7A7A7A;
+    --gold:         #D4AF7A;
 
     /* Typography */
     --font-serif:   Georgia, 'Times New Roman', serif;
@@ -84,7 +87,7 @@ p { color: var(--text-mid); }
 .section-divider {
     width: 40px;
     height: 1px;
-    background: var(--gold);
+    background: var(--green);
     margin: 20px auto 32px;
 }
 .section-lead {
@@ -129,26 +132,27 @@ p { color: var(--text-mid); }
     white-space: nowrap;
 }
 
-/* Primary: brown fill */
+/* Primary: verde natural fill */
 .btn-primary {
-    background: var(--brown);
+    background: var(--green);
     color: var(--white);
-    border-color: var(--brown);
+    border-color: var(--green);
 }
 .btn-primary:hover {
-    background: var(--brown-dark);
-    border-color: var(--brown-dark);
+    background: var(--green-dark);
+    border-color: var(--green-dark);
 }
 
-/* Outline: brown border, transparent fill */
+/* Outline: verde natural border, transparent fill */
 .btn-outline {
     background: transparent;
-    color: var(--brown);
-    border-color: var(--brown);
+    color: var(--green);
+    border-color: var(--green);
 }
 .btn-outline:hover {
-    background: var(--brown);
-    color: var(--white);
+    background: var(--green-light);
+    color: var(--brown);
+    border-color: var(--green);
 }
 
 /* Ghost: no border, text only */
@@ -159,9 +163,9 @@ p { color: var(--text-mid); }
     padding-left: 0;
     padding-right: 0;
 }
-.btn-ghost:hover { color: var(--brown); }
+.btn-ghost:hover { color: var(--green); }
 
-/* Header button */
+/* Header button — maro elegant */
 .btn-header {
     background: var(--brown);
     color: var(--white);
@@ -190,7 +194,7 @@ p { color: var(--text-mid); }
     cursor: pointer;
     transition: background var(--ease), color var(--ease);
 }
-.btn-cta-white:hover { background: var(--beige); }
+.btn-cta-white:hover { background: var(--green-light); }
 
 .btn-cta-outline {
     background: transparent;
@@ -227,7 +231,7 @@ p { color: var(--text-mid); }
     font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 400;
-    color: var(--beige);
+    color: #c8c4bc;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     user-select: none;
@@ -285,7 +289,7 @@ p { color: var(--text-mid); }
     transition: color var(--ease), background var(--ease);
 }
 .header-nav .nav-link:hover,
-.header-nav .nav-link.active { color: var(--brown); }
+.header-nav .nav-link.active { color: var(--green); }
 
 /* Mobile toggle */
 .nav-toggle {
@@ -369,7 +373,7 @@ p { color: var(--text-mid); }
     font-family: var(--font-serif);
     font-size: 48px;
     font-weight: 400;
-    color: var(--brown);
+    color: var(--green);
     line-height: 1;
 }
 .rating-slash {
@@ -393,17 +397,23 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   Welcome
+   Welcome — verde deschis background
    ================================================ */
+.welcome {
+    background: var(--green-light);
+}
 .welcome-inner {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
+.welcome .section-heading {
+    color: var(--green);
+}
 .welcome-divider {
     width: 40px;
     height: 1px;
-    background: var(--gold);
+    background: var(--green);
     margin: 20px auto 40px;
 }
 .welcome-body {
@@ -412,7 +422,7 @@ p { color: var(--text-mid); }
     flex-direction: column;
     gap: 20px;
 }
-.welcome-body p { font-size: 16px; line-height: 1.8; }
+.welcome-body p { font-size: 16px; line-height: 1.8; color: var(--text-dark); }
 
 /* ================================================
    Rooms
@@ -426,12 +436,12 @@ p { color: var(--text-mid); }
 
 .room-card {
     background: var(--white);
-    border: 1px solid var(--beige);
+    border: 1px solid var(--green-light);
     transition: border-color var(--ease), box-shadow var(--ease);
 }
 .room-card:hover {
-    border-color: #d0c5b8;
-    box-shadow: 0 4px 20px rgba(90,74,58,0.07);
+    border-color: var(--green);
+    box-shadow: 0 4px 20px rgba(164,172,134,0.15);
 }
 
 .room-placeholder { aspect-ratio: 10/7; }
@@ -441,7 +451,7 @@ p { color: var(--text-mid); }
     font-family: var(--font-serif);
     font-size: 20px;
     font-weight: 500;
-    color: var(--brown);
+    color: var(--green);
     margin-bottom: 14px;
     letter-spacing: 0.02em;
 }
@@ -459,7 +469,7 @@ p { color: var(--text-mid); }
     gap: 6px;
     margin-bottom: 28px;
     padding-top: 18px;
-    border-top: 1px solid var(--beige);
+    border-top: 1px solid var(--green-light);
 }
 .room-facilities li {
     font-size: 13px;
@@ -474,7 +484,7 @@ p { color: var(--text-mid); }
     top: 9px;
     width: 4px;
     height: 1px;
-    background: var(--gold);
+    background: var(--green);
 }
 
 .room-footer {
@@ -483,7 +493,7 @@ p { color: var(--text-mid); }
     justify-content: space-between;
     gap: 16px;
     padding-top: 20px;
-    border-top: 1px solid var(--beige);
+    border-top: 1px solid var(--green-light);
 }
 .room-price {
     font-family: var(--font-serif);
@@ -492,8 +502,11 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   Gallery
+   Gallery — alb
    ================================================ */
+.galerie {
+    background: var(--white);
+}
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -506,13 +519,13 @@ p { color: var(--text-mid); }
     overflow: hidden;
     border: 1px solid var(--beige);
 }
-.gallery-item:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gallery-item:focus { outline: 2px solid var(--green); outline-offset: 2px; }
 .gallery-placeholder { aspect-ratio: 4/3; }
 
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(90,74,58,0);
+    background: rgba(164,172,134,0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -526,32 +539,32 @@ p { color: var(--text-mid); }
     transition: opacity var(--ease);
     line-height: 1;
 }
-.gallery-item:hover .gallery-overlay { background: rgba(90,74,58,0.55); }
+.gallery-item:hover .gallery-overlay { background: rgba(164,172,134,0.6); }
 .gallery-item:hover .gallery-zoom    { opacity: 1; }
 
 /* ================================================
-   Facilities
+   Facilities — verde borduri
    ================================================ */
 .amenities-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    border-top: 0.5px solid var(--beige);
-    border-left: 0.5px solid var(--beige);
+    border-top: 0.5px solid var(--green);
+    border-left: 0.5px solid var(--green);
 }
 .amenity-card {
     padding: 28px 24px;
-    border-bottom: 0.5px solid var(--beige);
-    border-right: 0.5px solid var(--beige);
+    border-bottom: 0.5px solid var(--green);
+    border-right: 0.5px solid var(--green);
     transition: background var(--ease);
 }
-.amenity-card:hover { background: var(--grey-light); }
+.amenity-card:hover { background: var(--green-light); }
 .amenity-name {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--brown);
+    color: var(--green);
     margin-bottom: 8px;
 }
 .amenity-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
@@ -600,7 +613,7 @@ p { color: var(--text-mid); }
 .location-map iframe { width: 100%; height: 100%; border: none; display: block; }
 
 /* ================================================
-   Reviews
+   Reviews — verde deschis carduri
    ================================================ */
 .reviews-grid {
     display: grid;
@@ -608,14 +621,14 @@ p { color: var(--text-mid); }
     gap: 24px;
 }
 .review-card {
-    background: var(--grey-light);
+    background: var(--green-light);
     padding: 32px;
     transition: box-shadow var(--ease);
 }
-.review-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-card:hover { box-shadow: 0 2px 16px rgba(164,172,134,0.2); }
 
 .review-stars {
-    color: var(--gold);
+    color: var(--green);
     font-size: 16px;
     letter-spacing: 2px;
     margin-bottom: 16px;
@@ -623,7 +636,7 @@ p { color: var(--text-mid); }
 .review-text {
     font-family: var(--font-serif);
     font-size: 15px;
-    color: var(--text-dark);
+    color: var(--brown);
     line-height: 1.75;
     font-style: italic;
     margin-bottom: 20px;
@@ -637,10 +650,10 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   CTA Section
+   CTA Section — verde natural background
    ================================================ */
 .cta-section {
-    background: var(--brown);
+    background: var(--green);
     padding: 80px 32px;
 }
 .cta-inner { text-align: center; max-width: var(--container); margin: 0 auto; }
@@ -653,7 +666,7 @@ p { color: var(--text-mid); }
 }
 .cta-sub {
     font-size: 16px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.82);
     margin-bottom: 40px;
     max-width: 560px;
     margin-left: auto;
@@ -667,11 +680,11 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   Footer
+   Footer — maro elegant, bordura verde
    ================================================ */
 .footer {
-    background: var(--text-dark);
-    border-top: 1px solid var(--gold);
+    background: var(--brown);
+    border-top: 2px solid var(--green);
 }
 .footer-inner {
     display: grid;
@@ -711,7 +724,7 @@ p { color: var(--text-mid); }
 .footer-contact-info a:hover { color: var(--white); }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.07);
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding: 20px 32px;
 }
 .footer-bottom p {
@@ -768,7 +781,7 @@ p { color: var(--text-mid); }
     transition: color var(--ease);
     padding: 4px 8px;
 }
-.modal-close:hover { color: var(--brown); }
+.modal-close:hover { color: var(--green); }
 
 .modal-heading {
     font-family: var(--font-serif);
@@ -816,7 +829,7 @@ p { color: var(--text-mid); }
 .field-group select:focus,
 .field-group textarea:focus {
     outline: none;
-    border-color: var(--brown);
+    border-color: var(--green);
 }
 .field-group input.is-error,
 .field-group select.is-error { border-color: #b33; }
@@ -837,7 +850,7 @@ p { color: var(--text-mid); }
     margin-top: 2px;
     width: 16px;
     height: 16px;
-    accent-color: var(--brown);
+    accent-color: var(--green);
     flex-shrink: 0;
     padding: 0;
     border: none;
@@ -848,7 +861,7 @@ p { color: var(--text-mid); }
     letter-spacing: 0;
     font-size: 14px;
 }
-.field-check .field-label a { color: var(--brown); text-decoration: underline; }
+.field-check .field-label a { color: var(--green); text-decoration: underline; }
 .field-check .field-err { display: block; width: 100%; }
 
 .modal-actions {
@@ -866,14 +879,14 @@ p { color: var(--text-mid); }
 .success-mark {
     width: 56px;
     height: 56px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--green);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 24px;
     font-size: 22px;
-    color: var(--gold);
+    color: var(--green);
 }
 .success-heading {
     font-family: var(--font-serif);
@@ -909,11 +922,11 @@ p { color: var(--text-mid); }
     text-align: center;
 }
 .lightbox-placeholder {
-    background: #222;
+    background: #1e1e1e;
     aspect-ratio: 4/3;
     max-height: 70vh;
 }
-.lightbox-placeholder span { color: rgba(255,255,255,0.2); }
+.lightbox-placeholder span { color: rgba(255,255,255,0.15); }
 
 .lightbox-counter {
     font-size: 13px;

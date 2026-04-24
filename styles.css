@@ -218,7 +218,7 @@ p { color: var(--text-mid); }
 .btn-full { width: 100%; }
 
 /* ================================================
-   Image Placeholders
+   Image Placeholders — base + color variants
    ================================================ */
 .img-placeholder {
     background: var(--grey-light);
@@ -226,16 +226,35 @@ p { color: var(--text-mid); }
     align-items: center;
     justify-content: center;
     width: 100%;
+    border: 0.5px solid rgba(123,123,123,0.15);
 }
 .img-placeholder span {
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
-    color: #c8c4bc;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    color: rgba(0,0,0,0.35);
+    letter-spacing: 0.04em;
     user-select: none;
+    opacity: 0.7;
+    transition: opacity var(--ease);
 }
+.img-placeholder:hover span { opacity: 0.9; }
+
+/* Color variants */
+.ph-green-light { background: #D4DCC8; }
+.ph-green-light span { color: rgba(61,61,61,0.8); }
+
+.ph-brown { background: #6B5B4E; }
+.ph-brown span { color: rgba(255,255,255,0.8); }
+
+.ph-green { background: #A4AC86; }
+.ph-green span { color: rgba(255,255,255,0.85); }
+
+.ph-black { background: #1A1A1A; }
+.ph-black span { color: rgba(255,255,255,0.75); }
+
+.ph-black-gold { background: #1A1A1A; }
+.ph-black-gold span { color: rgba(212,175,122,0.8); }
 
 /* ================================================
    Header
@@ -680,10 +699,10 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   Footer — maro elegant, bordura verde
+   Footer — negru, bordura verde
    ================================================ */
 .footer {
-    background: var(--brown);
+    background: #1A1A1A;
     border-top: 2px solid var(--green);
 }
 .footer-inner {

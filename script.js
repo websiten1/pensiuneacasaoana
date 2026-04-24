@@ -303,3 +303,37 @@ const fadeObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
 
 fadeElements.forEach(el => fadeObserver.observe(el));
+
+// ================================================
+// Demo Banner
+// ================================================
+(function initDemoBanner() {
+    const banner      = document.getElementById('demo-banner');
+    const enterBtn    = document.getElementById('demo-enter-btn');
+    const closeBtn    = document.getElementById('demo-close-btn');
+
+    if (!banner) return;
+
+    // Don't show again in the same session
+    if (sessionStorage.getItem('demoShown')) {
+        banner.classList.add('demo-hidden');
+        return;
+    }
+
+    function hideBanner() {
+        banner.classList.add('demo-hiding');
+        sessionStorage.setItem('demoShown', 'true');
+        banner.addEventListener('animationend', () => {
+            banner.classList.add('demo-hidden');
+        }, { once: true });
+    }
+
+    enterBtn.addEventListener('click', hideBanner);
+    closeBtn.addEventListener('click', hideBanner);
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !banner.classList.contains('demo-hidden')) {
+            hideBanner();
+        }
+    });
+})();

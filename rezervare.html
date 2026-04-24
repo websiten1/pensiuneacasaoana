@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervare — Casa Oana, Iași</title>
+    <meta name="description" content="Rezervați o cameră la Pensiunea Casa Oana din Iași. Completați formularul și vă vom contacta în cel mult 2 ore.">
+    <meta name="robots" content="noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rezervare.css">
+</head>
+<body class="booking-page">
+
+<!-- ================================================
+     HEADER
+     ================================================ -->
+<header id="header" class="scrolled">
+    <div class="header-inner">
+        <a href="index.html" class="header-logo">CASA OANA</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Deschide meniu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="header-nav" id="headerNav" aria-label="Navigare principală">
+            <a href="index.html#home"       class="nav-link">Home</a>
+            <a href="index.html#camere"     class="nav-link">Camere</a>
+            <a href="index.html#galerie"    class="nav-link">Galerie</a>
+            <a href="index.html#locatie"    class="nav-link">Locatie</a>
+            <a href="index.html#recenzii"   class="nav-link">Recenzii</a>
+            <a href="index.html#contact"    class="nav-link">Contact</a>
+        </nav>
+
+        <a href="https://wa.me/40722645085" class="btn btn-header"
+           target="_blank" rel="noopener noreferrer">
+            WhatsApp
+        </a>
+    </div>
+</header>
+
+<!-- ================================================
+     PAGE HERO
+     ================================================ -->
+<section class="booking-hero">
+    <div class="container">
+        <p class="booking-hero-label">Casa Oana &mdash; Iași</p>
+        <h1 class="booking-hero-title">Rezervare</h1>
+        <p class="booking-hero-sub">Completați formularul de mai jos. Vă vom confirma rezervarea în cel mult 2 ore.</p>
+    </div>
+</section>
+
+<!-- ================================================
+     MAIN BOOKING LAYOUT
+     ================================================ -->
+<main class="booking-main">
+    <div class="container booking-layout">
+
+        <!-- LEFT: Form -->
+        <div class="booking-form-col">
+            <form id="bookingForm" class="booking-form-full" novalidate>
+
+                <fieldset class="form-section">
+                    <legend class="form-section-legend">Camera</legend>
+
+                    <div class="field-group">
+                        <label class="field-label" for="f-room">Tip camera <span class="req">*</span></label>
+                        <select id="f-room" name="room" required>
+                            <option value="">Selectati o camera...</option>
+                            <option value="Cameră Dublă Clasică">Cameră Dublă Clasică</option>
+                            <option value="Cameră Dublă Deluxe">Cameră Dublă Deluxe</option>
+                            <option value="Cameră Familială">Cameră Familială</option>
+                            <option value="Suite Premium">Suite Premium</option>
+                        </select>
+                        <span class="field-err" role="alert"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-section-legend">Durata sejurului</legend>
+
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="field-label" for="f-checkin">Data sosirii <span class="req">*</span></label>
+                            <input type="date" id="f-checkin" name="checkin" required>
+                            <span class="field-err" role="alert"></span>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="f-checkout">Data plecarii <span class="req">*</span></label>
+                            <input type="date" id="f-checkout" name="checkout" required>
+                            <span class="field-err" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label class="field-label" for="f-adults">Adulti <span class="req">*</span></label>
+                            <input type="number" id="f-adults" name="adults" min="1" max="6" value="2" required>
+                            <span class="field-err" role="alert"></span>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="f-children">Copii</label>
+                            <input type="number" id="f-children" name="children" min="0" max="6" value="0">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-section-legend">Date de contact</legend>
+
+                    <div class="field-group">
+                        <label class="field-label" for="f-name">Nume complet <span class="req">*</span></label>
+                        <input type="text" id="f-name" name="name" placeholder="Ion Popescu" required autocomplete="name">
+                        <span class="field-err" role="alert"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="f-email">Email <span class="req">*</span></label>
+                        <input type="email" id="f-email" name="email" placeholder="ion@email.com" required autocomplete="email">
+                        <span class="field-err" role="alert"></span>
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="f-phone">Telefon <span class="req">*</span></label>
+                        <input type="tel" id="f-phone" name="phone" placeholder="07XX XXX XXX" required autocomplete="tel">
+                        <span class="field-err" role="alert"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend class="form-section-legend">Cerinte speciale</legend>
+
+                    <div class="field-group">
+                        <label class="field-label" for="f-requests">Cerinte <span class="opt">(optional)</span></label>
+                        <textarea id="f-requests" name="requests" rows="4"
+                            placeholder="Etaj preferat, pat suplimentar, sosire tarzie, alergii alimentare..."></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="field-group field-check">
+                    <input type="checkbox" id="f-terms" name="terms" required>
+                    <label for="f-terms">
+                        Accept <a href="index.html#privacy">termenii si conditiile</a> <span class="req">*</span>
+                    </label>
+                    <span class="field-err" role="alert"></span>
+                </div>
+
+                <div class="booking-form-actions">
+                    <a href="index.html" class="btn btn-ghost">Anuleaza</a>
+                    <button type="submit" class="btn btn-primary">Trimite Rezervarea</button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- RIGHT: Sticky summary -->
+        <aside class="booking-summary-col" aria-label="Sumar rezervare">
+            <div class="booking-summary" id="bookingSummary">
+
+                <!-- Room visual -->
+                <div class="summary-room-visual" id="summaryRoomVisual">
+                    <div class="img-placeholder summary-placeholder ph-green-light" id="summaryRoomImg">
+                        <span id="summaryRoomImgLabel">Selectati o camera</span>
+                    </div>
+                </div>
+
+                <div class="summary-body">
+                    <h3 class="summary-room-name" id="summaryRoomName">—</h3>
+                    <p class="summary-room-desc" id="summaryRoomDesc"></p>
+
+                    <div class="summary-divider"></div>
+
+                    <dl class="summary-details" id="summaryDetails">
+                        <div class="summary-row" id="summaryCheckinRow">
+                            <dt>Sosire</dt>
+                            <dd id="summaryCheckin">—</dd>
+                        </div>
+                        <div class="summary-row" id="summaryCheckoutRow">
+                            <dt>Plecare</dt>
+                            <dd id="summaryCheckout">—</dd>
+                        </div>
+                        <div class="summary-row" id="summaryNightsRow">
+                            <dt>Nopti</dt>
+                            <dd id="summaryNights">—</dd>
+                        </div>
+                        <div class="summary-row" id="summaryGuestsRow">
+                            <dt>Oaspeti</dt>
+                            <dd id="summaryGuests">2 adulti</dd>
+                        </div>
+                    </dl>
+
+                    <div class="summary-price-row">
+                        <span class="summary-price-label">Total estimat</span>
+                        <span class="summary-price-value" id="summaryPrice">Solicita oferta</span>
+                    </div>
+
+                    <a href="https://wa.me/40722645085" class="btn btn-wa" id="summaryWaBtn"
+                       target="_blank" rel="noopener noreferrer">
+                        Intreaba pe WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="summary-note">
+                <p>Rezervarile sunt confirmate in cel mult <strong>2 ore</strong> in timpul programului de lucru.</p>
+                <p>Pentru cazuri urgente sunati direct: <a href="tel:+40722645085">0722 645 085</a></p>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<!-- ================================================
+     SUCCESS OVERLAY
+     ================================================ -->
+<div class="booking-success-overlay" id="bookingSuccess" hidden>
+    <div class="booking-success-box">
+        <div class="success-mark">&#10003;</div>
+        <h2 class="success-heading">Cererea a fost trimisa.</h2>
+        <p class="success-body">
+            Va multumim. Veti fi contactat in cel mult 2 ore pentru confirmarea rezervarii.
+            O fereastra WhatsApp s-a deschis cu detaliile rezervarii.
+        </p>
+        <a href="index.html" class="btn btn-outline">Inapoi la pagina principala</a>
+    </div>
+</div>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer id="contact" class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">CASA OANA</span>
+            <p class="footer-tagline">Ospitalitate autentică de cinci stele în Iași.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Navigare</h4>
+            <ul class="footer-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#camere">Camere</a></li>
+                <li><a href="index.html#galerie">Galerie</a></li>
+                <li><a href="index.html#locatie">Locatie</a></li>
+                <li><a href="index.html#recenzii">Recenzii</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Contact</h4>
+            <address class="footer-contact-info">
+                <p>Nicolae Beldiceanu nr. 2</p>
+                <p>700374 Iași, România</p>
+                <p><a href="tel:+40722645085">0722 645 085</a></p>
+            </address>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Social</h4>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://wa.me/40722645085" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                </li>
+                <li>
+                    <a href="https://maps.google.com/?q=Nicolae+Beldiceanu+2,+Iasi" target="_blank" rel="noopener noreferrer">Google Maps</a>
+                </li>
+                <li><a href="index.html#privacy">Confidentialitate</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Casa Oana, Iași. Toate drepturile rezervate.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="rezervare.js"></script>
+</body>
+</html>

@@ -305,35 +305,84 @@ const fadeObserver = new IntersectionObserver(entries => {
 fadeElements.forEach(el => fadeObserver.observe(el));
 
 // ================================================
-// Demo Banner
+// Demo Wizard
 // ================================================
-(function initDemoBanner() {
-    const banner      = document.getElementById('demo-banner');
-    const enterBtn    = document.getElementById('demo-enter-btn');
-    const closeBtn    = document.getElementById('demo-close-btn');
+(function initDemoWizard() {
+    const wizard   = document.getElementById('demo-wizard');
+    const closeBtn = document.getElementById('demo-wizard-close');
+    const prevBtn  = document.getElementById('demo-wizard-prev');
+    const nextBtn  = document.getElementById('demo-wizard-next');
+    const progress = document.getElementById('demo-wizard-progress');
 
-    if (!banner) return;
+    if (!wizard) return;
 
-    // Don't show again in the same session
-    if (sessionStorage.getItem('demoShown')) {
-        banner.classList.add('demo-hidden');
+    if (localStorage.getItem('demoWizardDone')) {
+        wizard.classList.add('demo-hidden');
         return;
     }
 
-    function hideBanner() {
-        banner.classList.add('demo-hiding');
-        sessionStorage.setItem('demoShown', 'true');
-        banner.addEventListener('animationend', () => {
-            banner.classList.add('demo-hidden');
+    const TOTAL = 4;
+    let current = 1;
+
+    function updateUI() {
+        progress.textContent = current + ' / ' + TOTAL;
+
+        for (let i = 1; i <= TOTAL; i++) {
+            const step = document.getElementById('demo-step-' + i);
+            if (!step) continue;
+            if (i === current) {
+                step.classList.remove('demo-step-hidden');
+                step.style.animation = 'none';
+                step.offsetHeight; // trigger reflow to restart animation
+                step.style.animation = '';
+            } else {
+                step.classList.add('demo-step-hidden');
+            }
+        }
+
+        if (current === TOTAL) {
+            prevBtn.className = 'demo-wizard-btn demo-wizard-btn--skip';
+            prevBtn.textContent = 'Skip intro';
+            prevBtn.disabled = false;
+            nextBtn.className = 'demo-wizard-btn demo-wizard-btn--enter';
+            nextBtn.textContent = 'Intru pe website';
+        } else {
+            prevBtn.className = 'demo-wizard-btn demo-wizard-btn--prev';
+            prevBtn.innerHTML = '&#8592;';
+            prevBtn.disabled = current === 1;
+            nextBtn.className = 'demo-wizard-btn demo-wizard-btn--next';
+            nextBtn.innerHTML = 'Next &#8594;';
+        }
+    }
+
+    function hideWizard() {
+        wizard.classList.add('demo-hiding');
+        localStorage.setItem('demoWizardDone', 'true');
+        wizard.addEventListener('animationend', () => {
+            wizard.classList.add('demo-hidden');
         }, { once: true });
     }
 
-    enterBtn.addEventListener('click', hideBanner);
-    closeBtn.addEventListener('click', hideBanner);
+    function goNext() {
+        if (current < TOTAL) { current++; updateUI(); }
+        else hideWizard();
+    }
+
+    function goPrev() {
+        if (current === TOTAL) hideWizard(); // "Skip intro"
+        else if (current > 1) { current--; updateUI(); }
+    }
+
+    nextBtn.addEventListener('click', goNext);
+    prevBtn.addEventListener('click', goPrev);
+    closeBtn.addEventListener('click', hideWizard);
 
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && !banner.classList.contains('demo-hidden')) {
-            hideBanner();
-        }
+        if (wizard.classList.contains('demo-hidden')) return;
+        if (e.key === 'ArrowRight') goNext();
+        else if (e.key === 'ArrowLeft') goPrev();
+        else if (e.key === 'Escape') hideWizard();
     });
+
+    updateUI();
 })();

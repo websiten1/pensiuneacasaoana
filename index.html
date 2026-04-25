@@ -724,19 +724,59 @@
 </div>
 
 <!-- ================================================
-     DEMO BANNER
+     DEMO WIZARD
      ================================================ -->
-<div id="demo-banner" class="demo-banner" aria-modal="true" role="dialog" aria-labelledby="demo-heading">
-    <div class="demo-banner-content">
-        <button class="demo-close" id="demo-close-btn" aria-label="Inchide">&times;</button>
-        <p class="demo-label">Website demonstrativ</p>
-        <h1 class="demo-heading" id="demo-heading">Acesta este website-ul tău demo</h1>
-        <h2 class="demo-sub">Pentru Pensiunea Casa Oana</h2>
-        <p class="demo-desc">
-            Design profesionist și modern, creat special pentru tine.<br>
-            Customize orice detaliu direct din cod — culori, text, imagini, facilități.
-        </p>
-        <button id="demo-enter-btn" class="demo-button">Vezi website</button>
+<div id="demo-wizard" class="demo-wizard" role="dialog" aria-modal="true" aria-labelledby="demo-wizard-heading">
+    <div class="demo-wizard-content">
+        <div class="demo-wizard-topbar">
+            <span class="demo-wizard-progress" id="demo-wizard-progress">1 / 4</span>
+            <button class="demo-wizard-close" id="demo-wizard-close" aria-label="Inchide">&times;</button>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="demo-step" id="demo-step-1">
+            <h1 class="demo-wizard-heading" id="demo-wizard-heading">Bun venit la Casa Oana</h1>
+            <h2 class="demo-wizard-sub">Website Demo</h2>
+            <p class="demo-wizard-text">Acesta este un website demonstrativ profesionist și modern pentru Pensiunea Casa Oana. Toate elementele pot fi personalizate și modificate după necesități.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="demo-step demo-step-hidden" id="demo-step-2">
+            <h1 class="demo-wizard-heading">Ce conține website-ul</h1>
+            <ul class="demo-wizard-list">
+                <li><span class="demo-list-icon">✦</span>Design clasic și elegant</li>
+                <li><span class="demo-list-icon">✦</span>Sistem de booking complet cu WhatsApp</li>
+                <li><span class="demo-list-icon">✦</span>Galerie foto și descriere camerelor</li>
+                <li><span class="demo-list-icon">✦</span>Contact și locație integrată</li>
+            </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="demo-step demo-step-hidden" id="demo-step-3">
+            <h1 class="demo-wizard-heading">Totul este provizoriu</h1>
+            <p class="demo-wizard-text demo-wizard-text--lead">Poți modifica:</p>
+            <ul class="demo-wizard-list demo-wizard-list--compact">
+                <li><span class="demo-list-icon">→</span>Culori și design</li>
+                <li><span class="demo-list-icon">→</span>Text și conținut</li>
+                <li><span class="demo-list-icon">→</span>Imagini și galerie</li>
+                <li><span class="demo-list-icon">→</span>Informații de contact</li>
+                <li><span class="demo-list-icon">→</span>Prețuri și oferte</li>
+                <li><span class="demo-list-icon">→</span>Orice altceva pe care îl găsești</li>
+            </ul>
+            <p class="demo-wizard-footnote">Nu ai nevoie de programator — schimbări simple direct în cod</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="demo-step demo-step-hidden" id="demo-step-4">
+            <h1 class="demo-wizard-heading">Gata de început?</h1>
+            <p class="demo-wizard-text">Website-ul este complet funcțional și gata de utilizare. Poți personaliza orice în funcție de nevoile tale.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="demo-wizard-nav">
+            <button class="demo-wizard-btn demo-wizard-btn--prev" id="demo-wizard-prev" aria-label="Înapoi" disabled>&#8592;</button>
+            <button class="demo-wizard-btn demo-wizard-btn--next" id="demo-wizard-next">Next &#8594;</button>
+        </div>
     </div>
 </div>
 

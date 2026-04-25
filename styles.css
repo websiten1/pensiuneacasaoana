@@ -1087,9 +1087,9 @@ p { color: var(--text-mid); }
 }
 
 /* ================================================
-   Demo Banner
+   Demo Wizard
    ================================================ */
-.demo-banner {
+.demo-wizard {
     position: fixed;
     inset: 0;
     z-index: 9999;
@@ -1097,40 +1097,51 @@ p { color: var(--text-mid); }
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(26, 26, 26, 0.97);
-    animation: demoBannerIn 0.5s ease both;
+    background: #1A1A1A;
+    animation: demoWizardIn 0.5s ease both;
 }
 
-.demo-banner.demo-hiding {
-    animation: demoBannerOut 0.4s ease both;
+.demo-wizard.demo-hiding {
+    animation: demoWizardOut 0.4s ease both;
 }
 
-.demo-banner.demo-hidden {
+.demo-wizard.demo-hidden {
     display: none;
 }
 
-@keyframes demoBannerIn {
+@keyframes demoWizardIn {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-@keyframes demoBannerOut {
+@keyframes demoWizardOut {
     from { opacity: 1; }
     to   { opacity: 0; }
 }
 
-.demo-banner-content {
+.demo-wizard-content {
     position: relative;
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
     text-align: center;
-    padding: 0 16px;
 }
 
-.demo-close {
-    position: absolute;
-    top: -40px;
-    right: -8px;
+.demo-wizard-topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.demo-wizard-progress {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+}
+
+.demo-wizard-close {
     background: none;
     border: none;
     color: rgba(255,255,255,0.5);
@@ -1141,68 +1152,177 @@ p { color: var(--text-mid); }
     transition: color 0.2s ease;
 }
 
-.demo-close:hover {
+.demo-wizard-close:hover {
     color: #fff;
 }
 
-.demo-label {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--green);
-    margin-bottom: 20px;
+.demo-step {
+    min-height: 280px;
+    animation: stepFadeIn 0.3s ease both;
 }
 
-.demo-banner h1.demo-heading {
+.demo-step-hidden {
+    display: none;
+}
+
+@keyframes stepFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.demo-wizard-heading {
     font-family: Georgia, serif;
-    font-size: clamp(28px, 5vw, 48px);
+    font-size: clamp(28px, 5vw, 36px);
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.02em;
-    line-height: 1.15;
-    margin-bottom: 14px;
+    line-height: 1.2;
+    margin-bottom: 16px;
 }
 
-.demo-banner h2.demo-sub {
+.demo-wizard-sub {
     font-family: Georgia, serif;
-    font-size: clamp(16px, 2.5vw, 22px);
+    font-size: clamp(14px, 2.5vw, 18px);
     font-weight: 400;
     color: var(--green-light);
     margin-bottom: 28px;
     letter-spacing: 0.04em;
 }
 
-.demo-desc {
+.demo-wizard-text {
     font-family: 'Lato', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 40px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
 }
 
-.demo-button {
-    display: inline-block;
-    background: var(--green);
-    color: #fff;
+.demo-wizard-text--lead {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+}
+
+.demo-wizard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 32px;
+    max-width: 480px;
+    text-align: left;
+}
+
+.demo-wizard-list li {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.demo-wizard-list li:last-child {
+    border-bottom: none;
+}
+
+.demo-wizard-list--compact li {
+    padding: 7px 0;
+    font-size: 17px;
+}
+
+.demo-list-icon {
+    color: var(--green);
+    font-size: 14px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.demo-wizard-footnote {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.demo-wizard-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.demo-wizard-btn {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 16px 48px;
-    border: none;
-    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.25s ease, transform 0.2s ease;
+    border-radius: 6px;
+    border: none;
+    transition: background 0.25s ease, transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
-.demo-button:hover {
+.demo-wizard-btn--prev {
+    background: none;
+    color: rgba(255,255,255,0.4);
+    padding: 14px 20px;
+    font-size: 20px;
+}
+
+.demo-wizard-btn--prev:not(:disabled):hover {
+    color: rgba(255,255,255,0.8);
+}
+
+.demo-wizard-btn--prev:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.demo-wizard-btn--next {
+    background: var(--green);
+    color: #fff;
+    padding: 16px 40px;
+    text-transform: uppercase;
+}
+
+.demo-wizard-btn--next:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.demo-wizard-btn--skip {
+    background: none;
+    color: rgba(255,255,255,0.4);
+    padding: 14px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.2);
+}
+
+.demo-wizard-btn--skip:hover {
+    color: rgba(255,255,255,0.7);
+}
+
+.demo-wizard-btn--enter {
+    background: var(--green);
+    color: #fff;
+    padding: 18px 52px;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+}
+
+.demo-wizard-btn--enter:hover {
     background: var(--green-dark);
     transform: translateY(-2px);
 }
 
 @media (max-width: 480px) {
-    .demo-banner-content { padding: 0 8px; }
-    .demo-button { padding: 14px 32px; }
+    .demo-wizard-content { padding: 0 8px; }
+    .demo-wizard-btn--next,
+    .demo-wizard-btn--enter { padding: 14px 28px; }
 }

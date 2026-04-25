@@ -345,7 +345,7 @@ fadeElements.forEach(el => fadeObserver.observe(el));
             prevBtn.textContent = 'Skip intro';
             prevBtn.disabled = false;
             nextBtn.className = 'demo-wizard-btn demo-wizard-btn--enter';
-            nextBtn.textContent = 'Intru pe website';
+            nextBtn.textContent = 'Intră pe website';
         } else {
             prevBtn.className = 'demo-wizard-btn demo-wizard-btn--prev';
             prevBtn.innerHTML = '&#8592;';
